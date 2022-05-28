@@ -4,8 +4,52 @@ import Image from 'next/image'
 import { CardItem } from '../components/CardItem'
 import { Landing } from '../components/Landing'
 import { Navbar } from '../components/Navbar'
-import img from '../public/imgs/lace.jpg'
+import { BigCard } from '../components/BigCard'
+import img1 from '../public/imgs/cardImg1.svg';
+import img2 from '../public/imgs/cardImg2.svg';
+import img3 from '../public/imgs/cardImg3.svg';
+import river from '../public/imgs/river.svg'
+import mountains from '../public/imgs/mountains.svg'
+import beach from '../public/imgs/beach.svg'
+import booking from '../public/imgs/booking.svg'
+import { AccordionCard } from '../components/AccordionCard'
+import { Footer } from '../components/Footer'
+import { ToTop } from '../components/ToTop'
+import { useInView } from 'react-intersection-observer'
+
 const Home: NextPage = () => {
+
+ const heading = useInView({
+    threshold:0,
+    rootMargin:'-10%',
+    triggerOnce:true
+  });
+  const cards = useInView({
+    threshold:0,
+    rootMargin:'-10%',
+    triggerOnce:true,
+  })
+ const heading1 = useInView({
+    threshold:0,
+    rootMargin:'-10%',
+    triggerOnce:true
+  });
+ const heading2 = useInView({
+    threshold:0,
+    rootMargin:'-10%',
+    triggerOnce:true
+  });
+ const bigCard = useInView({
+    threshold:0,
+    rootMargin:'-10%',
+    triggerOnce:true
+  });
+ const accordions = useInView({
+    threshold:0,
+    rootMargin:'-10%',
+    triggerOnce:true
+  });
+  
   return (
     <div>
       <Head>
@@ -19,11 +63,47 @@ const Home: NextPage = () => {
       <Landing/>
       </div>
       <div className="bg-[url('../public/imgs/lace.jpg')] bg-contain h-[80px] w-full " ></div>
-      <div>
-        <h4 className='text-sm font-heading my-10 text-center w-full tracking-[10px] font-semibold'>POPULAR ACTIVITIES</h4>
+      <div  className='my-20'>
+        <div ref={heading.ref} className={`${heading.inView ? 'translate-y-[0vh] opacity-1' : 'translate-y-[10vh] opacity-0'} transition-all duration-1000 ease-out `}>
+        <h4  className='text-sm font-heading my-10 text-center w-full tracking-[10px] font-semibold'>POPULAR ACTIVITIES</h4>
         <h3 className='text-4xl my-10 tracking-wide w-full text-center capitalize font-medium'>Most popular activities in pakistan</h3>
-        <CardItem/>
+        </div>
+        <div ref={cards.ref} className={`flex flex-wrap justify-center transition-all duration-[1500ms] ease-out ${cards.inView ? 'opacity-100' : 'opacity-0'} `}>
+        <CardItem title='experience' desc='Explore the beauty of Pakistan' img={img1} />
+        <CardItem title='relax' desc='Indulge in the relaxing atmosphere' img={img2} />
+        <CardItem title='embrace' desc='Let the scenery take your breath away' img={img3} />
+        </div>
       </div>
+      <div className='my-40 relative'>
+        <div ref={heading1.ref} className={`transition-all duration-[1000ms] ease-out ${heading1.inView ? 'translate-y-[0vh] opacity-100' : 'translate-y-[20vh] opacity-0'} `} >
+        <h4 className='text-sm font-heading my-10 text-center w-full tracking-[10px] font-semibold'>TOUR DESTINATIONS</h4>
+        <h3 className='text-4xl my-10 tracking-wide w-full text-center capitalize font-medium'>Top tour destinations in pakistan</h3>
+        </div>
+        <div className="flex flex-wrap justify-center mt-[150px]">
+        <div ref={bigCard.ref} className={`transition-all duration-1000 ${bigCard.inView ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}>
+        <BigCard/>
+        </div>
+        <div ref={accordions.ref} className={`flex flex-col transition-all duration-[2000ms] ease-in-out ${accordions.inView ? 'translate-y-[0vh] opacity-100' : 'translate-y-[20vh] opacity-0'} `}>
+        <AccordionCard title={'Neelum Valley'} price={'12000'} desc={'An exquisite tour of the Neelum valley'} img={mountains}   />
+        <AccordionCard title={'French Beach'} price={'15000'} desc={'Go swimming in the beautiful deep blue'} img={beach}   />
+        <AccordionCard title={'Swat River'} price={'18000'} desc={'Flowing from the glaciers of Hindi Kush'} img={river}   />
+        </div>
+        </div>
+        <div className='flex justify-center my-40'>
+          <form ref={heading2.ref} className={`flex flex-col items-start transition-all duration-[1500ms] ${heading2.inView ? 'opacity-100' : 'opacity-0'}`}>
+        <h4 className='text-sm mt-10 mb-5 font-heading w-full tracking-[10px] font-semibold'>RESERVE NOW</h4>
+        <h3 className='text-4xl mb-10 tracking-wide w-full capitalize font-medium'>Book you tour with us now</h3>
+        <p className='max-w-[400px]'>Looking for an experience like never before? Book your tour with us today and let us contact you.</p>
+        <input required type="text" placeholder='Name' className='px-4 py-2 transition-all  text-black shadow-md w-full rounded-2xl placeholder:italic focus:outline-none border-2 border-transparent hover:border-primary focus:border-primary bg-stone-100 my-4 mt-10' />
+        <input required type="date" placeholder='Preferred date' className='px-4 py-2 transition-all  text-black shadow-md w-full rounded-2xl placeholder:italic focus:outline-none border-2 border-transparent hover:border-primary focus:border-primary bg-stone-100 my-4 ' />
+        <input required type="email" placeholder='Email' className='px-4 py-2 transition-all  text-black shadow-md w-full rounded-2xl placeholder:italic focus:outline-none border-2 border-transparent hover:border-primary focus:border-primary bg-stone-100 my-4' />
+        <button className='my-4 px-6 py-2 rounded-2xl bg-secondary hover:bg-secondaryLighter text-white font-medium'>Submit</button> 
+          </form>
+          <Image height={600} src={booking}/>
+        </div>
+      <ToTop/>
+      </div>
+      <Footer/>
     </div>
   )
 }

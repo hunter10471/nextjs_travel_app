@@ -13,12 +13,12 @@ export const Landing = (props: Props) => {
       <p className='max-w-[450px]  text-sm leading-7 my-5 '>Pakistan is blessed with abundant natural and historical riches,
           Incredible mountain landscapes are set against a backdrop of desert forts and stories of sultans and djinns.</p>
 
-      <button className='py-2 px-4 rounded-2xl bg-secondary hover:bg-secondaryLighter text-white font-medium' >Visit Now</button>
+      <button className='py-2 px-4 text-lg rounded-2xl my-5 bg-secondary hover:bg-secondaryLighter text-white font-medium' >Visit Now</button>
       </div>
       <div className='relative'>
         <CloudIcon className='text-white absolute' sx={{fontSize:50}} />
         <CloudIcon className='text-white absolute right-0 top-10' sx={{fontSize:50}} />
-      <Image height={600} objectFit='contain' src={img} />
+      <Image height={650} objectFit='contain' src={img} />
       </div>
     </div>
   )
