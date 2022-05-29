@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { CardItem } from '../components/CardItem'
 import { Landing } from '../components/Landing'
 import { Navbar } from '../components/Navbar'
@@ -16,8 +17,13 @@ import { AccordionCard } from '../components/AccordionCard'
 import { Footer } from '../components/Footer'
 import { ToTop } from '../components/ToTop'
 import { useInView } from 'react-intersection-observer'
+import 'leaflet/dist/leaflet.css'
 
 const Home: NextPage = () => {
+
+  const Map = dynamic(
+    ()=> import('../components/Map.jsx') as any, {ssr:false}
+  )
 
  const heading = useInView({
     threshold:0,
@@ -36,7 +42,7 @@ const Home: NextPage = () => {
   });
  const heading2 = useInView({
     threshold:0,
-    rootMargin:'-10%',
+    rootMargin:'-30%',
     triggerOnce:true
   });
  const bigCard = useInView({
@@ -68,6 +74,7 @@ const Home: NextPage = () => {
         <h4  className='text-sm font-heading my-10 text-center w-full tracking-[10px] font-semibold'>POPULAR ACTIVITIES</h4>
         <h3 className='text-4xl my-10 tracking-wide w-full text-center capitalize font-medium'>Most popular activities in pakistan</h3>
         </div>
+        <Map/>
         <div ref={cards.ref} className={`flex flex-wrap justify-center transition-all duration-[1500ms] ease-out ${cards.inView ? 'opacity-100' : 'opacity-0'} `}>
         <CardItem title='experience' desc='Explore the beauty of Pakistan' img={img1} />
         <CardItem title='relax' desc='Indulge in the relaxing atmosphere' img={img2} />
