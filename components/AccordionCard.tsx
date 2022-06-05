@@ -14,7 +14,7 @@ type Props = {
 
 export const AccordionCard = (props: Props) => {
   return (
-    <Accordion className='bg-stone-100 rounded-br-2xl m-4 max-w-[500px]'>
+    <Accordion className='border-b-2 shadow-secondary shadow-md rounded-br-2xl m-4 w-[80vw] md:max-w-[500px]'>
     <AccordionSummary
       expandIcon={<ArrowDropDownIcon className='text-primary' fontSize='large' />}
       aria-controls="panel1a-content"
@@ -25,16 +25,19 @@ export const AccordionCard = (props: Props) => {
     <AccordionDetails>
     <Image height={350} src={props.img} />
     <div className='flex items-start'>
-     <p className=' tracking-wide my-4 p-4 rounded-br-2xl flex flex-col text-lg font-semibold '>
+     <p className=' tracking-wide my-4 p-4 rounded-br-2xl flex flex-col text-lg font-semibold font-heading capitalize '>
         {props.desc}
         <span className='flex items-center font-bold mt-2'>
         <Rating className='mr-2' defaultValue={5} precision={0.5} readOnly />
          5.0
         </span>
      </p>
-     <h3 className='m-4 p-4 text-3xl font-bold text-primary'>Rs.{props.price}</h3>
+     <h3 className='m-4 p-4 text-3xl font-bold text-primary hidden md:block'>Rs.{props.price}</h3>
     </div>
-    <button className='mx-2 px-4 py-2 rounded-2xl bg-secondary hover:bg-secondaryLighter text-white font-medium'>See more</button>
+    <div className='flex items-center justify-between'>
+    <button className='mx-2 px-4 py-2 rounded-2xl bg-secondary hover:bg-secondaryLighter text-white font-medium'><a href="#form">Book Now</a></button>
+    <h3 className=' mx-2 text-xl font-bold text-primary block md:hidden'>Rs.{props.price}</h3>
+    </div>
     </AccordionDetails>
   </Accordion>
   )
