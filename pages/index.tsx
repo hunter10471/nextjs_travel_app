@@ -61,7 +61,7 @@ const Home: NextPage = () => {
     triggerOnce:true
   });
   
-  const submitFunc = (e) => {
+  const submitFunc = (e:any) => {
     e.preventDefault()
     setShowAlert(true)
     setTimeout(()=>setShowAlert(false),10000)
