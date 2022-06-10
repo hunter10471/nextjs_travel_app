@@ -20,6 +20,8 @@ import { AccordionCard } from '../components/AccordionCard'
 import { Footer } from '../components/Footer'
 import { ToTop } from '../components/ToTop'
 import { useInView } from 'react-intersection-observer'
+import { Alert, AlertTitle } from '@mui/material'
+import { useState } from 'react'
 
 const Home: NextPage = () => {
 
@@ -27,6 +29,7 @@ const Home: NextPage = () => {
   const Map = dynamic(
     ()=> import('../components/Map.jsx') as any, {ssr:false}
   )
+  const [showAlert, setShowAlert] = useState(false)
 
  const heading = useInView({
     threshold:0,
@@ -58,6 +61,11 @@ const Home: NextPage = () => {
     triggerOnce:true
   });
   
+  const submitFunc = (e) => {
+    e.preventDefault()
+    setShowAlert(true)
+    setTimeout(()=>setShowAlert(false),10000)
+  }
   return (
     <div>
       <Head>
@@ -99,7 +107,7 @@ const Home: NextPage = () => {
         </div>
         </div>
         <div className='flex justify-center md:flex-row flex-col mt-20 mb-10 mx-10'>
-          <form id='form' ref={heading2.ref} className={`flex flex-col items-start min-w-[300px] transition-all duration-[1500ms] ${heading2.inView ? 'opacity-100' : 'opacity-0'}`}>
+          <form id='form' onSubmit={(e)=>submitFunc(e)} ref={heading2.ref} className={`flex flex-col items-start min-w-[300px] transition-all duration-[1500ms] ${heading2.inView ? 'opacity-100' : 'opacity-0'}`}>
         <h4 className='text-xs lg:text-sm mt-10 mb-5 font-heading w-full tracking-[10px] font-semibold'>RESERVE NOW</h4>
         <h3 className='text-3xl lg:text-4xl mb-10 tracking-wide w-full capitalize font-extrabold'>Book your tour with us now</h3>
         <p className='max-w-[400px]'>Looking for an experience like never before? Book your tour with us today and let us contact you.</p>
@@ -107,6 +115,10 @@ const Home: NextPage = () => {
         <input required type="date" placeholder='Preferred date' className='px-4 py-2 transition-all  text-black shadow-md w-full rounded-2xl placeholder:italic focus:outline-none border-2 border-transparent hover:border-primary focus:border-primary bg-stone-100 my-4 ' />
         <input required type="email" placeholder='Email' className='px-4 py-2 transition-all  text-black shadow-md w-full rounded-2xl placeholder:italic focus:outline-none border-2 border-transparent hover:border-primary focus:border-primary bg-stone-100 my-4' />
         <button className='my-4 px-6 py-2 rounded-2xl bg-secondary hover:bg-secondaryLighter text-white font-medium'>Submit</button> 
+        <Alert className={`w-full ${showAlert ? 'block' : 'hidden'}`} severity="success">
+        <AlertTitle>Success</AlertTitle>
+        Your booking has been made - <strong>We will contact you soon.</strong>
+        </Alert>
           </form>
           <Image height={1000} src={booking}/>
         </div>
