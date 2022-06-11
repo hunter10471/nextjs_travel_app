@@ -33,8 +33,8 @@ export const MapCard = (props: Props) => {
       </p>
     </CardContent>
     <CardActions sx={{p:0}} >
-        <IconButton sx={{p:0,pr:1}}  onClick={()=>setFavorite(!favorite)} ><FavoriteIcon sx={{fontSize:25}} className={`${favorite ? 'text-rose-500 ' : ''}`} /> <span className='text-sm ml-2' >4.5k</span> </IconButton>
-        <IconButton sx={{p:0}} onClick={()=>setLike(!like)} ><ThumbUpIcon sx={{fontSize:25}} className={`${like ? 'text-amber-500 ' : ''}`} /><span className='text-sm ml-2' >5.5k</span></IconButton>
+        <IconButton sx={{p:0,pr:1}}  onClick={()=>setFavorite(!favorite)} ><FavoriteIcon fontSize='medium' className={`${favorite ? 'text-rose-500 ' : ''}`} /> <span className='text-sm ml-2' >4.5k</span> </IconButton>
+        <IconButton sx={{p:0}} onClick={()=>setLike(!like)} ><ThumbUpIcon fontSize='medium' className={`${like ? 'text-amber-500 ' : ''}`} /><span className='text-sm ml-2' >5.5k</span></IconButton>
       </CardActions>
   </Card>
   )

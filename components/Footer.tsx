@@ -19,10 +19,10 @@ export const Footer = (props: Props) => {
             <li className='mx-4 my-3 lg:my-0  py-1 px-4 rounded-xl hover:bg-secondary hover:text-white cursor-pointer transition-all'>Contact Us</li>
         </ul>
         <div className='flex flex-1 items-center justify-end'>
-            <FacebookIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' sx={{fontSize:25}} />
-            <TwitterIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' sx={{fontSize:25}}/>
-            <WhatsAppIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' sx={{fontSize:25}}/>
-            <InstagramIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' sx={{fontSize:25}}/>
+            <FacebookIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' fontSize='medium' />
+            <TwitterIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' fontSize='medium'/>
+            <WhatsAppIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' fontSize='medium'/>
+            <InstagramIcon className='text-white p-1 cursor-pointer hover:bg-primary/80 bg-primary rounded-full mx-1' fontSize='medium'/>
         </div>
     </div>
   )

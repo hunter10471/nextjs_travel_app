@@ -35,23 +35,23 @@ const CardModal = (props: Props) => {
       <h2 className=' flex items-center text-md md:text-lg lg:text-xl tracking-[5px] uppercase font-heading font-bold mb-4 mt-1 '><span className='mr-2 mb-1'>{props.icon}</span> {props.title}</h2>
       <p className='text-stone-700 text-sm md:text-md lg:text-lg mb-2'>{props.desc}</p>
       <div className='flex items-center mt-4 mb-2'>
-            <FacebookIcon className='bg-[#3b5998] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' sx={{fontSize:25}} />
-            <WhatsAppIcon className='bg-[#25D366] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' sx={{fontSize:25}}/>
-            <TwitterIcon className='bg-[#00acee] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' sx={{fontSize:25}}/>
-            <InstagramIcon className='bg-[#E1306C] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' sx={{fontSize:25}}/>
+            <FacebookIcon className='bg-[#3b5998] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' fontSize='medium' />
+            <WhatsAppIcon className='bg-[#25D366] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' fontSize='medium'/>
+            <TwitterIcon className='bg-[#00acee] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' fontSize='medium'/>
+            <InstagramIcon className='bg-[#E1306C] hover:opacity-90 text-white p-1 cursor-pointer  rounded-full mr-2' fontSize='medium'/>
         </div>
       </div>
       <div className='flex justify-between items-center p-1 sm:p-4 bg-primary/70 text-white font-medium text-[10px] sm:text-xs md:text-sm lg:text-md md:rounded-tl-full capitalize font-heading'>
         <div className='flex items-center text-center justify-center flex-col sm:flex-row p-2 flex-1'>
-            <GroupIcon sx={{fontSize:25}} className=' sm:mr-4' />
+            <GroupIcon fontSize='medium' className=' sm:mr-4' />
             50k+ tourists visited annually
         </div>  
         <div className='p-2 flex-1 border-x-2 flex items-center justify-center text-center flex-col sm:flex-row'>
-        <MonetizationOnIcon sx={{fontSize:25}} className=' sm:mr-4' />
+        <MonetizationOnIcon fontSize='medium' className=' sm:mr-4' />
             650M+ revenue generated
         </div>  
         <div className='flex items-center justify-center text-center flex-col sm:flex-row p-2 flex-1'>
-            <ThumbsUpDownIcon sx={{fontSize:25}} className='sm:mr-4'  />
+            <ThumbsUpDownIcon fontSize='medium' className='sm:mr-4'  />
             20k+ positive reviews
         </div>  
       </div>
