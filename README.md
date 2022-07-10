@@ -1,34 +1,105 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# :tada: Nextjs, TailwindCSS travel application
 
-## Getting Started
+Hello everyone, this application depicts a simple UI presenting information related to tourism and travel in Pakistan :earth_asia:. The app itself is deployed on vercel on the following link:
 
-First, run the development server:
+:link: https://travel-app-nu.vercel.app
 
-```bash
-npm run dev
-# or
-yarn dev
+## 🔥 Features
+- :point_right: Map integrated using leafletjs with custom markers
+- :crystal_ball: Material-ui and framer-motion used for animations as well as ui-components
+- :iphone: Fully responsive application
+
+## :camera: Screenshots
+
+### Landing page
+![](https://github.com/hunter10471/nextjs_travel_app/blob/master/screenshots/ss1.png)
+
+### Modal
+![](https://github.com/hunter10471/nextjs_travel_app/blob/master/screenshots/ss2.png)
+
+### Map
+![](https://github.com/hunter10471/nextjs_travel_app/blob/master/screenshots/ss3.png)
+
+## :key: Dependencies
+
+```JSON
+"dependencies":{
+  "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "leaflet": "^1.8.0",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-intersection-observer": "^9.1.0",
+    "react-leaflet": "^4.0.0"
+
+  },
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :construction_worker: Dev dependencies
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```JSON
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+  "devDependencies": {
+    "@types/leaflet": "^1.7.10",
+    "@types/node": "17.0.33",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.4",
+    "autoprefixer": "^10.4.7",
+    "eslint": "8.15.0",
+    "eslint-config-next": "12.1.6",
+    "postcss": "^8.4.13",
+    "tailwindcss": "^3.0.24",
+    "typescript": "4.6.4"
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+  ```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🏗️ How to Set up `Travel App` for Development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Clone the repository
 
-## Deploy on Vercel
+```bash
+git clone https://github.com/hunter10471/nextjs_travel_app.git
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Change the working directory
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+cd nextjs_travel_app
+```
+
+3. Install dependencies
+
+```bash
+npm install # or, yarn install
+```
+
+4. Run the app
+
+```bash
+npm run dev # or, yarn dev
+```
+
+That's All!!! Now open [localhost:3000](http://localhost:3000/) to see the app.
+
+
+## 🍔 Built With
+- [Next JS](https://nextjs.org/): The coolest React-based framework on the planet
+- [TailwindCss](https://tailwindcss.com/) A utility-first CSS framework packed with classes
+- [Vercel](http://vercel.com/): Best for Hosting a Next.js app
+
+
+
+## 🛡️ License
+This project is licensed under the MIT License - see the [`LICENSE`](LICENSE) file for details.
+
+
+
